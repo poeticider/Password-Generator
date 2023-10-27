@@ -19,15 +19,18 @@
                     <h2>Generate a Password</h2>
                 </div>
                 <div class="card-body">
-                    <textarea
-                        readonly
-                        id="password"
-                        placeholder="Your Secure Password"
-                        aria-label="Generated Password"
-                    >
-                    </textarea>
 
-                    <h2 class="checkbox-header">Select Character Types for Password</h2>
+                    <h3>Select Password Length</h3>
+
+                    <form class="numLength-form-container" action="toResearch...!">
+                        <label class="numLength-form-label" for="passLength">
+                            Enter a number for password length (from 8 to 128 characters):
+                        </label>
+                        <br><br>
+                        <input class="numLength-input-box" type="number" id="passLength" name="passLength" min="8" max="128" value="12">
+                    </form>
+
+                    <h3 class="checkbox-header">Select Character Types for Password</h3>
                     <div class="checkboxes-container">
                         <div class="single-checkbox-container">
                             <input type="checkbox" id="lowercase" name="lowecase" value="lowercase">
@@ -52,6 +55,13 @@
                     </div>
 
 
+                    <textarea
+                        readonly
+                        id="password"
+                        placeholder="Your Secure Password"
+                        aria-label="Generated Password"
+                    >
+                    </textarea>
                 </div>
                 <div class="card-footer">
                     <button id="generate" class="btn">Generate Password</button>

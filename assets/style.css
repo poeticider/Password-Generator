@@ -35,6 +35,19 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* ------------------------ INPUT FIELDS ------------------------------ */
+
+.numLength-form-container {
+
+}
+
+.checkboxes-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
 /* --------------------------- MAIN ----------------------------------- */
 
 .card {
@@ -79,15 +92,6 @@ header {
   content: " ";
   display: block;
   clear: both;
-}
-
-/* ------------------------ CHECKBOXES ------------------------------ */
-
-.checkboxes-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0.5rem;
 }
 
 /* ------------------------BUTTON ELEMENT---------------------------------- */
