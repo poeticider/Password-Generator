@@ -1,3 +1,6 @@
+
+/* ------------------------UNIVERSAL CSS-------------------- */
+
 *,
 *::before,
 *::after {
@@ -23,12 +26,16 @@ body {
   padding-right: 20px;
 }
 
+/*--------------------------- HEADER ------------------------------- */
+
 header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
 }
+
+/* --------------------------- MAIN ----------------------------------- */
 
 .card {
   background-color: hsl(0, 0%, 100%);
@@ -54,6 +61,8 @@ header {
   min-height: 100px;
 }
 
+/* ------------------------------CONTAINER FOOTER ---------------------------------- */
+
 .card-footer {
   text-align: center;
 }
@@ -71,6 +80,17 @@ header {
   display: block;
   clear: both;
 }
+
+/* ------------------------ CHECKBOXES ------------------------------ */
+
+.checkboxes-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
+/* ------------------------BUTTON ELEMENT---------------------------------- */
 
 .btn {
   border: none;
@@ -97,6 +117,8 @@ button[disabled] {
   float: right;
 }
 
+/* ----------------- SCRIPTED ELEMENTS ------------------ */
+
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -117,6 +139,8 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
+
+/*------------------------------- MEDIA QUERIES ----------------------------*/
 
 @media (max-width: 690px) {
   .btn {
