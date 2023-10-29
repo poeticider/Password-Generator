@@ -220,14 +220,32 @@ const generatePassword = () => {
     let numericToggle = document.getElementById("numeric").value;
     let specialCharToggle = document.getElementById("specialChar").value;
 
+
+    valuesArr = {
+        "lowercaseToggle": lowercaseToggle,
+        "uppercaseToggle": uppercaseToggle, 
+        "numericToggle": numericToggle, 
+        "specialCharToggle": specialCharToggle
+    };
+
+    desiredValuesArr = [];
+
     if(lowercaseToggle == "false" && uppercaseToggle == "false" && numericToggle == "false" && specialCharToggle == "false") {
         alert("Error: please select at least one checkbox option.");
         
     } else {
         //password generator logic here
 
+        for(const [key, value] of Object.entries(valuesArr)) {
+            
+            //console.log(`${key}, ${value}`)
+            if(value == "true") {
+                // console.log(`${key}, ${value}`)
+                desiredValuesArr.push(key);
 
-
+            }
+        }
+        console.log(desiredValuesArr)
     }
 };
 
