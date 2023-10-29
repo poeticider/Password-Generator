@@ -22,34 +22,34 @@
 
                     <h3>Select Password Length</h3>
 
-                    <form class="numLength-form-container" action="toResearch...!">
+                    <form class="numLength-form-container">
                         <label class="numLength-form-label" for="passLength">
                             Enter a number for password length (from 8 to 128 characters):
                         </label>
                         <br><br>
-                        <input class="numLength-input-box" type="number" id="passLength" name="passLength" min="8" max="128" value="12">
+                        <input onchange="passwordLength()" class="numLength-input-box" type="number" id="passLength" name="passLength" min="8" max="128" value="12">
                     </form>
 
                     <h3 class="checkbox-header">Select Character Types for Password</h3>
                     <div class="checkboxes-container">
                         <div class="single-checkbox-container">
-                            <input type="checkbox" id="lowercase" name="lowecase" value="lowercase">
+                            <input onclick="lowercaseToggle()" type="checkbox" id="lowercase" name="lowercase" value="false">
                             <label for="lowercase">lowercase</label>
                         </div>
 
                         <div class="single-checkbox-container">
-                            <input type="checkbox" id="uppercase" name="uppercase" value="uppercase">
+                            <input onclick="uppercaseToggle()" type="checkbox" id="uppercase" name="uppercase" value="false">
                             <label for="uppercase">uppercase</label>
                         </div>
 
                         <div class="single-checkbox-container">
-                            <input type="checkbox" id="numeric" name="numeric" value="numeric">
+                            <input onclick="numericToggle()" type="checkbox" id="numeric" name="numeric" value="false">
                             <label for="numeric">numbers</label> 
                         </div>
 
                         <div class="single-checkbox-container">
-                            <input type="checkbox" id="specialChar" name="specialChar" value="specialChar">
-                            <label for="specialChar">special characters(!@# etc.)</label> 
+                            <input onclick="specialCharToggle()" type="checkbox" id="specialChar" name="specialChar" value="false">
+                            <label for="specialChar">special characters (!@# etc.)</label> 
                         </div>
 
                     </div>
