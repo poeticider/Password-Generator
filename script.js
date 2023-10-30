@@ -230,10 +230,13 @@ const generatePassword = () => {
     };
 
     //array to be filled with selected checkbox options
-    desiredValuesArr = [];
+    let desiredValuesArr = [];
 
     //array to be filled with all chosen characters based on desiredValuesArr
-    desiredCharDataArr = [];
+    let desiredCharDataArr = [];
+
+    //array to be filled with random characters taken from desiredCharDataArr
+    let generatedPassArr = [];
 
     //if no password options have been toggled the alert plays and nothing is generated
     if(lowercaseToggle == "false" && uppercaseToggle == "false" && numericToggle == "false" && specialCharToggle == "false") {
@@ -251,47 +254,58 @@ const generatePassword = () => {
             }
         }
 
-    //logs desired elements
-    //console.log(desiredValuesArr);
+        //logs desired elements
+        //console.log(desiredValuesArr);
 
-    desiredValuesArr.forEach(function(toggle){
-        console.log(toggle);
+        desiredValuesArr.forEach(function(toggle){
+            //confirms current toggles
+            //console.log(toggle);
 
-        if(toggle == "lowercaseToggle") {
-            for(chars in lowerCasedCharacters) {
+            if(toggle == "lowercaseToggle") {
+                for(chars in lowerCasedCharacters) {
 
-                desiredCharDataArr.push(lowerCasedCharacters[chars]);
+                    desiredCharDataArr.push(lowerCasedCharacters[chars]);
+                }
             }
+
+            if(toggle == "uppercaseToggle") {
+                for(chars in upperCasedCharacters) {
+
+                    desiredCharDataArr.push(upperCasedCharacters[chars]);
+                }
+            }
+
+            if(toggle == "numericToggle") {
+                for(chars in numericCharacters) {
+
+                    desiredCharDataArr.push(numericCharacters[chars]);
+                }
+            }
+
+            if(toggle == "specialCharToggle") {
+                for(chars in specialCharacters) {
+
+                    desiredCharDataArr.push(specialCharacters[chars]);
+                }
+            }
+
+        });
+
+        //logs array filled with all desired characters
+        //console.log(`Array filled with all desired checkbox options: ${desiredCharDataArr}`);
+        //console.log(`Total Password Length: ${passwordLength}`);
+
+        let counter = 0;
+
+        while(counter < passwordLength) {
+            let randomChar = desiredCharDataArr[Math.floor(Math.random() * desiredCharDataArr.length)];
+            generatedPassArr.push(randomChar);
+            counter++
         }
 
-        if(toggle == "uppercaseToggle") {
-            for(chars in upperCasedCharacters) {
-
-                desiredCharDataArr.push(upperCasedCharacters[chars]);
-            }
-        }
-
-        if(toggle == "numericToggle") {
-            for(chars in numericCharacters) {
-
-                desiredCharDataArr.push(numericCharacters[chars]);
-            }
-        }
-
-        if(toggle == "specialCharToggle") {
-            for(chars in specialCharacters) {
-
-                desiredCharDataArr.push(specialCharacters[chars]);
-            }
-        }
-
-    });
-
-    //logs array filled with all desired characters
-    //console.log(desiredCharDataArr);
-
-
-
+        const generatedPass = generatedPassArr.join('');
+        //console.log(`Generated Password: ${generatedPass}`);
+        return generatedPass;
 
     }
 };
