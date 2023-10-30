@@ -1,79 +1,30 @@
-# Module 5 Challenge: Password Generator
+# <Random Password Generator App>
 
-## Overview
+## Description
 
-This week’s challenge requires you to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of Password Special Characters from the OWASP Foundation](https://www.owasp.org/index.php/Password_special_characters).
+- Random Password Generator App Website that creates a random password based on user specifications.
 
-## Instructions
-
-The following image shows the web application's appearance and functionality:
-
-![password generator demo](./assets/05-javascript-challenge-demo.png)
+- This project was used to practice in javaScript integration and functionality in HTML. I'm happy with the end result, and felt it got me more confident using HTML events such as **onclick()** and **onload()**, as well as **addEventListener()**.
 
 
-* Generate a password when the button is clicked
-  * Present a series of prompts for password criteria
-    * Length of password
-      * At least 8 characters but no more than 128.
-    * Character types
-      * Lowercase
-      * Uppercase
-      * Numeric
-      * Special characters ($@%&*, etc)
-  * Code should validate for each input and at least one character type should be selected
-  * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
+## Installation
 
-## Grading Requirements
+- The deployed website can be found here: https://poeticider.github.io/Password-Generator/
 
-This challenge is graded based on the following criteria: 
+- The website can also be hosted locally by cloning the repository. Information on how to do this can be found here: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository 
 
-### Technical Acceptance Criteria: 40%
+  - For setup local hosting a html page, a guide can be found here: https://javascript.plainenglish.io/deploying-a-localhost-server-with-node-js-and-express-js-58775f098407 
 
-* Satisfies all of the above acceptance criteria plus the following:
+## Usage
 
-  * The challenge should not produce any errors in the console when you inspect it using Chrome DevTools.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
+* To generate a password, you must do the following:
+    * choose a password length (from 8 to 128 characters) using the input box. 
+    * Use the check-boxes to select characters you want to use for your password (note that at least one option must be selected to generate a password).
+    * Once you are happy with your chosen parameters, click the 'Generate Password' button. Your password will appear in the box above the button.
 
 
-## Review
+![Website Index Page](./assets/media/password%20generator%20screenshot.jpg)
 
-You are required to submit the following for review:
 
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

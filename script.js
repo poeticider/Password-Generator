@@ -256,9 +256,11 @@ const generatePassword = () => {
     //array to be filled with random characters taken from desiredCharDataArr
     let generatedPassArr = [];
 
-    //if no password options have been toggled the alert plays and nothing is generated
+    //if no password options have been toggled no password is generated & error message is displayed.
     if(lowercaseToggle == "false" && uppercaseToggle == "false" && numericToggle == "false" && specialCharToggle == "false") {
-        alert("Error: please select at least one checkbox option.");
+
+        const generatedPass = "Error: Please select at least one checkbox option.";
+        return generatedPass;
 
     } else {
         //password generator logic here
