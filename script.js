@@ -91,7 +91,25 @@ const specialCharacters = [
     '.'
 ];
 
-//----------------------------------------------LOGIC-----------------------------------------------------
+//----------------------------------------------ONLOAD LOGIC-----------------------------------------------------
+
+//logic below causes checkboxes to toggle off if the page in refreshed
+//this prevents undesirable behaviour that caused checkbox toggles to work incorrectly
+//onload logic taken from link: https://stackoverflow.com/questions/12364007/uncheck-all-checkbox-on-pageload-using-javascript
+
+
+const uncheckAll = () => { 
+    let w = document.getElementsByTagName('input'); 
+
+    for (var i = 0; i < w.length; i++) { 
+
+        if (w[i].type=='checkbox') { 
+
+            w[i].checked = false; 
+            
+        }
+    }
+} 
 
 
 //---------------------------------------------PASSWORD GENERATION OPTIONS LOGIC-----------------------------
@@ -322,11 +340,6 @@ const writePassword = () => {
 
     passwordText.value = password;
 }
-
-
-
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
