@@ -1,33 +1,5 @@
-// Array of special characters to be included in password
-const specialCharacters = [
-    '@',
-    '%',
-    '+',
-    '\\',
-    '/',
-    "'",
-    '!',
-    '#',
-    '$',
-    '^',
-    '?',
-    ':',
-    ',',
-    ')',
-    '(',
-    '}',
-    '{',
-    ']',
-    '[',
-    '~',
-    '-',
-    '_',
-    '.'
-];
 
-
-// Array of numeric characters to be included in password
-const numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+//------------------------------DATA SET ARRAYS--------------------------------------------
 
 // Array of lowercase characters to be included in password
 const lowerCasedCharacters = [
@@ -87,6 +59,36 @@ const upperCasedCharacters = [
     'X',
     'Y',
     'Z'
+];
+
+// Array of numeric characters to be included in password
+const numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+// Array of special characters to be included in password
+const specialCharacters = [
+    '@',
+    '%',
+    '+',
+    '\\',
+    '/',
+    "'",
+    '!',
+    '#',
+    '$',
+    '^',
+    '?',
+    ':',
+    ',',
+    ')',
+    '(',
+    '}',
+    '{',
+    ']',
+    '[',
+    '~',
+    '-',
+    '_',
+    '.'
 ];
 
 //----------------------------------------------LOGIC-----------------------------------------------------
@@ -205,12 +207,11 @@ const specialCharToggle = () => {
 
 };
 
-//----------------------------------------------------
+//--------------------------------PASSWORD GENERATOR LOGIC--------------------
 
 
 
 
-//**MUST KEEP **/
 // Function to generate password with user input
 const generatePassword = () => {
     //variables for password generation
@@ -228,24 +229,70 @@ const generatePassword = () => {
         "specialCharToggle": specialCharToggle
     };
 
+    //array to be filled with selected checkbox options
     desiredValuesArr = [];
 
+    //array to be filled with all chosen characters based on desiredValuesArr
+    desiredCharDataArr = [];
+
+    //if no password options have been toggled the alert plays and nothing is generated
     if(lowercaseToggle == "false" && uppercaseToggle == "false" && numericToggle == "false" && specialCharToggle == "false") {
         alert("Error: please select at least one checkbox option.");
-        
+
     } else {
         //password generator logic here
 
         for(const [key, value] of Object.entries(valuesArr)) {
             
-            //console.log(`${key}, ${value}`)
             if(value == "true") {
-                // console.log(`${key}, ${value}`)
+                //arr is filled with all desired elements
                 desiredValuesArr.push(key);
 
             }
         }
-        console.log(desiredValuesArr)
+
+    //logs desired elements
+    //console.log(desiredValuesArr);
+
+    desiredValuesArr.forEach(function(toggle){
+        console.log(toggle);
+
+        if(toggle == "lowercaseToggle") {
+            for(chars in lowerCasedCharacters) {
+
+                desiredCharDataArr.push(lowerCasedCharacters[chars]);
+            }
+        }
+
+        if(toggle == "uppercaseToggle") {
+            for(chars in upperCasedCharacters) {
+
+                desiredCharDataArr.push(upperCasedCharacters[chars]);
+            }
+        }
+
+        if(toggle == "numericToggle") {
+            for(chars in numericCharacters) {
+
+                desiredCharDataArr.push(numericCharacters[chars]);
+            }
+        }
+
+        if(toggle == "specialCharToggle") {
+            for(chars in specialCharacters) {
+
+                desiredCharDataArr.push(specialCharacters[chars]);
+            }
+        }
+
+    });
+
+    //logs array filled with all desired characters
+    //console.log(desiredCharDataArr);
+
+
+
+
     }
 };
 
